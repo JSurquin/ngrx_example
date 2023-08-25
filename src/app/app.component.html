@@ -1,0 +1,19 @@
+<router-outlet></router-outlet>
+<!-- Comme on le voit ici, j'utilise un routeur 
+ce qui fais qu'il n'y a pas de relation parent > enfant entre mes composants
+donc je ne peux pas utiliser @Input() et @Output() pour communiquer entre eux
+je vais donc avoir vraiment besoin d'un magasin pour récuperer les données 
+et les partager entre mes composants -->
+
+<!-- le but de notre application poc (proof of concept)
+c'est de faire voir l'interet de ngrx dans une application angular
+du principe de store (magasin) si vous préferez 
+
+ici dans notre cas : 
+on a un postComponent qui va afficher une liste de post
+donc utiliser un service post 
+qui va faire une requete http pour récuperer les données
+et les stocker pour ensuite partager entre les composants via une action/reducer/effet via ngrx
+donc j'ai créer un composant autre page qui ne communique pas directement avec post component
+mais qui va utiliser le store pour récuperer les données (les post) et les afficher
+alors que normalement comme ils sont plus "cousin" que parent/enfant ça ne devrais pas être possible ou dur à être mis en place techniquement avec @Input et @Output -->
